@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Pong</title>
+		<script src="../build/three.min.js"></script>
+		<script src="js/controls/OrbitControls.js"></script>
+		<script src="js/Detector.js"></script>
+		<script src="js/libs/stats.min.js"></script>
+		<script src="js/helpers/CameraHelper.js"></script>
+		
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				color: #000;
+				font-family:Monospace;
+				font-size:18px;
+				text-align:center;
+				font-weight: bold;
+				background-color: #fff;
+				margin: 0px;
+				overflow: hidden;
+			}
+
+			#info {
+				color: red;
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+
+			}
+
+			#player1_score{
+				color: green;
+				position: absolute;
+				top: 150px; 
+				right: 200px;
+				width: 100%;
+				font-size:50px;
+				padding: 5px;
+			}
+
+			#player2_score{
+				color: red;
+				position: absolute;
+				top: 150px; 
+				left: 200px;
+				width: 100%;
+				font-size:50px;
+				padding: 5px;
+			}
+
+			#button{
+				color: red;
+				position: absolute;
+				top: 150px; 
+				width: 100%;
+				font-size:50px;
+				padding: 5px;
+				z-index: 999;
+			}
+
+			a {
+				color: red;
+			}
+		</style>
+	</head>
+
+	<body onload="main()">
+		<div id="container"></div>
+
+		<div id="info">
+			A (very) simple pong game built with Three.js R78
+			<br><br>
+			Use Q key to move up
+			<br> 
+			Use S key to move down 
+		</div>
+
+		<div id="player1_score">
+			0		
+		</div>
+		
+		<div id="button">
+		<button type="button" onclick="reset()">Click Me!</button> 
+		</div>
+
+		<div id="player2_score">
+			0		
+		</div>
+		
+
+		<script src="pong_game.js"></script>
+
+	</body>
+</html>
