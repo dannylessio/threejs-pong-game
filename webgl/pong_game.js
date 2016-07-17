@@ -11,7 +11,7 @@ var player2_score = 0;
 
 function setRenderer() {
 
-	renderer = new THREE.WebGLRenderer();
+	renderer = new THREE.WebGLRenderer({ alpha: true });
 	renderer.setPixelRatio( window.devicePixelRatio );
 	renderer.setSize( window.innerWidth, window.innerHeight );
 	document.body.appendChild( renderer.domElement );
@@ -277,7 +277,9 @@ function onWindowResize() {
 	renderer.setSize( window.innerWidth, window.innerHeight );
 }
 
+
 function setLights(){
+
 	var light = new THREE.AmbientLight( 0xffffff );
 	scene.add( light );
 
@@ -293,18 +295,20 @@ function setLights(){
 	scene.add( spotLight );
 }
 
+
 function reset(){
+
 	player1_score = 0;
 	player2_score = 0;
 	document.getElementById("player1_score").innerHTML = player1_score;
 	document.getElementById("player2_score").innerHTML = player2_score;
-
-	ball.position.x = 0;
-	ball.position.y = 0;
 	
-	lock = 0;
-	ball_speed = -0.1;
-	ball_angle = Math.PI;	
+	if( lock == 0 ){
+		ball.position.x = 0;
+		ball.position.y = 0;
+		ball_speed = -0.1;
+		ball_angle = Math.PI;	
+	}
 }
 
 function main() {
